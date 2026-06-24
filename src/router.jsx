@@ -5,8 +5,8 @@ import EventsPage from "./pages/EventsPage";
 import Execom from "./pages/Execom";
 import { createBrowserRouter } from "react-router-dom";
 import Execom23 from "./components/Execom23/Execom23";
-import Execom22 from "./components/Exicom22/Exicom22";
-import ArticleGrid from "./components/BlogSIte/ArticleGrid";
+import Execom22 from "./components/Execom22/Execom22";
+import ArticleGrid from "./components/BlogSite/ArticleGrid";
 import BlogComponent from "./components/BlogComponent/BlogComponent";
 import Execom25 from "./components/Execom25/Execom25";
 import Reise from "./components/Events/Reise"; // Import the new component

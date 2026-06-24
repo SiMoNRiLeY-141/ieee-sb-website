@@ -1,8 +1,8 @@
 
 import Heading from "../Heading"
-import sb22 from "../../assets/images/Exicom22/exc22SB.webp"
-import cs_ias22 from "../../assets/images/Exicom22/exc22CsIAs.webp"
-import com_wig22 from "../../assets/images/Exicom22/exc22WigCOMS.webp"
+import sb22 from "../../assets/images/Execom22/exc22SB.webp"
+import cs_ias22 from "../../assets/images/Execom22/exc22CsIAs.webp"
+import com_wig22 from "../../assets/images/Execom22/exc22WigCOMS.webp"
 import Banner from "../Banner/Banner"
 const Execom22 = () => {
 

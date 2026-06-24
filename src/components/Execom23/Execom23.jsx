@@ -1,8 +1,8 @@
 import Heading from "../Heading"
-import sb23 from "../../assets/images/Exicome23/exc23_sb.webp"
-import cs_ias23 from "../../assets/images/Exicome23/exc23_cs_nd_ias.webp"
-import com_wig23 from "../../assets/images/Exicome23/exc23Com_Wig.webp"
-import sght23 from "../../assets/images/Exicome23/exc23_sght.webp"
+import sb23 from "../../assets/images/Execom23/exc23_sb.webp"
+import cs_ias23 from "../../assets/images/Execom23/exc23_cs_nd_ias.webp"
+import com_wig23 from "../../assets/images/Execom23/exc23Com_Wig.webp"
+import sght23 from "../../assets/images/Execom23/exc23_sght.webp"
 import Banner from "../Banner/Banner"
 const Execom23 = () => {
 
