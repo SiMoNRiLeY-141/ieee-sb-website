@@ -10,7 +10,6 @@ import ExecomSection from "../components/ExecomSection/ExecomSection";
 import GallerySection from "../components/GallerySection/GallerySection";
 import InfoSection from "@/components/InfoSection/InfoSection";
 import Spacer from "@/components/Spacer";
-import ComingSoon from "@/components/Events/ComingSoon"
 
 const HomePage = () => {
   return (
@@ -18,8 +17,6 @@ const HomePage = () => {
       <Banner />
       <div className="sm:container sm:px-20 flex flex-col justify-center items-start">
           <Hero />
-          <Spacer />
-          <ComingSoon />
           <Spacer />
           <Societies />
           <Spacer />
