@@ -19,6 +19,18 @@ const ExecomPage = ({ defaultYear = "2026" }) => {
   }, [defaultYear]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
+  // Dynamic SEO title & description
+  React.useEffect(() => {
+    document.title = `Executive Committee ${activeTab} — IEEE SB GEC Palakkad`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        `Meet the dedicated student leaders of the IEEE Student Branch, GEC Palakkad executive committee (EXECOM) for the year ${activeTab}.`
+      );
+    }
+  }, [activeTab]);
+
   const years = ["2026", "2025", "2024", "2023", "2022"];
 
   return (

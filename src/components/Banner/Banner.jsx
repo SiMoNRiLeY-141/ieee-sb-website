@@ -96,12 +96,13 @@ const Banner = () => {
           >
             Gallery
           </a>
-          <Link
-            to="/execom"
+          <a
+            href="/#execom"
+            onClick={(e) => handleScrollTo(e, "execom")}
             className="text-slate-600 hover:text-sky-600 transition-colors text-sm font-semibold tracking-wide uppercase"
           >
             Execom
-          </Link>
+          </a>
           <a
             href="/#contact"
             onClick={(e) => handleScrollTo(e, "contact")}

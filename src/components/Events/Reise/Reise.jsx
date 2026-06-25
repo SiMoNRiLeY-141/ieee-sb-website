@@ -4,6 +4,17 @@ import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 function Reise() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  useEffect(() => {
+    document.title = "REISE 2025 — IEEE SB GEC Palakkad";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "Official page of REISE 2025, organized by IEEE SB GEC Palakkad in association with IEEE Malabar Subsection. Learn about our science and engineering workshops."
+      );
+    }
+  }, []);
+
   // Sample images for carousel - you can replace with your actual images
   const carouselImages = [
     {

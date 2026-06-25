@@ -11,6 +11,17 @@ import InfoSection from "@/components/InfoSection/InfoSection";
 import ScrollReveal3D from "../components/Common/ScrollReveal3D";
 
 const HomePage = () => {
+  React.useEffect(() => {
+    document.title = "IEEE SB GEC Palakkad";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "Official website of the IEEE Student Branch, Government Engineering College Palakkad. Explore our technical societies, events, executive committee, and achievements."
+      );
+    }
+  }, []);
+
   return (
     <>
       <Banner />

@@ -13,6 +13,24 @@ export default [
   // Base JS rules
   js.configs.recommended,
 
+  // Node.js config files at the project root
+  // (vite.config.js, tailwind.config.js, postcss.config.js, eslint.config.js)
+  {
+    files: [
+      "*.config.js",
+      "*.config.mjs",
+      "*.config.cjs",
+    ],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+        ...globals.es2021,
+      },
+    },
+  },
+
   // React source files
   {
     files: ["**/*.{js,jsx}"],

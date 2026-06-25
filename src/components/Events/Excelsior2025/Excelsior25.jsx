@@ -5,6 +5,15 @@ import "./Excelsior25.css";
 const Excelsior25 = () => {
   // === Effects for splash screen, sparkles, counters, registration ===
   useEffect(() => {
+    document.title = "EXCELSIOR '25 — IEEE SB GEC Palakkad";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        "Rise above the rest at EXCELSIOR '25, the signature tech-cultural festival organized by IEEE Student Branch GEC Palakkad."
+      );
+    }
+
     // Splash
     const splash = document.getElementById("splash");
     if (splash) {
