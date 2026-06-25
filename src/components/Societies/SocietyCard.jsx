@@ -1,0 +1,69 @@
+import React from "react";
+import { Linkedin, Instagram, Globe } from "lucide-react";
+
+const SocietyCard = ({ image, name, fullName, link1, link2, webpage }) => {
+  return (
+    <div className="w-full max-w-[240px] bg-white border border-slate-200/80 rounded-2xl p-[20px] flex flex-col items-center justify-between shadow-sm hover:shadow-md hover:border-sky-500/30 hover:-translate-y-1 transition-all duration-300 group min-h-[380px]">
+      {/* Upper part: Clean Logo Container (Larger Size) */}
+      <div className="h-28 flex items-center justify-center w-full mb-2">
+        <img
+          src={image}
+          alt={`${name} emblem`}
+          className="w-[90%] h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+          onError={(e) => {
+            e.target.src =
+              "https://via.placeholder.com/120?text=" + name.substring(0, 3);
+          }}
+        />
+      </div>
+
+      {/* Middle part: Locked text height for perfect grid alignment */}
+      <div className="w-full text-center flex-grow flex flex-col justify-center my-2">
+        <h3 className="text-slate-800 font-semibold text-[13px] leading-tight tracking-wider uppercase font-monument min-h-[36px] flex items-center justify-center">
+          {name}
+        </h3>
+        <p className="text-slate-400 text-[9px] mt-1.5 uppercase tracking-widest leading-normal line-clamp-2 min-h-[28px] flex items-center justify-center">
+          {fullName}
+        </p>
+      </div>
+
+      {/* Lower part: Visible actions */}
+      <div className="w-full mt-4 space-y-3">
+        {/* Redirect Button */}
+        <a
+          href={webpage}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-1.5 w-full py-2 text-[10px] font-bold tracking-wider uppercase text-slate-700 hover:text-white bg-slate-50 hover:bg-[#0f172a] border border-slate-200 hover:border-[#0f172a] rounded-lg transition-all duration-300 shadow-sm"
+        >
+          <span>Visit Society Site</span>
+          <Globe className="w-3.5 h-3.5" />
+        </a>
+
+        {/* Social Links Row */}
+        <div className="flex items-center justify-center gap-3">
+          <a
+            href={link1}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-sky-50 hover:text-sky-600 text-slate-400 transition-colors duration-200 border border-transparent hover:border-sky-100"
+            aria-label={`${name} LinkedIn`}
+          >
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href={link2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-rose-50 hover:text-rose-600 text-slate-400 transition-colors duration-200 border border-transparent hover:border-rose-100"
+            aria-label={`${name} Instagram`}
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SocietyCard;

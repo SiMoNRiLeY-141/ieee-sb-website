@@ -2,58 +2,48 @@ import HomePage from "./pages/HomePage";
 import "./assets/fonts/MonumentExtended-Regular.otf";
 import "./assets/fonts/MonumentExtended-Ultrabold.otf";
 import EventsPage from "./pages/EventsPage";
-import Execom from "./pages/Execom";
+import Execom from "./pages/ExecomPage";
 import { createBrowserRouter } from "react-router-dom";
-import Execom23 from "./components/Execom23/Execom23";
-import Execom22 from "./components/Execom22/Execom22";
-import ArticleGrid from "./components/BlogSite/ArticleGrid";
-import BlogComponent from "./components/BlogComponent/BlogComponent";
-import Execom25 from "./components/Execom25/Execom25";
-import Reise from "./components/Events/Reise"; // Import the new component
-import Excelsior25 from "./components/Excelsior2025/Excelsior25";
+import Reise from "./components/Events/Reise/Reise";
+import Excelsior25 from "./components/Events/Excelsior2025/Excelsior25";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <HomePage />
   },
   {
     path: "/events",
-    element: <EventsPage />,
-  },
-    {
-    path: "/execom25",
-    element: <Execom25 />,
+    element: <EventsPage />
   },
   {
     path: "/execom",
-    element: <Execom />,
+    element: <Execom defaultYear="2026" />
+  },
+  {
+    path: "/execom25",
+    element: <Execom defaultYear="2025" />
+  },
+  {
+    path: "/execom24",
+    element: <Execom defaultYear="2024" />
   },
   {
     path: "/execom23",
-    element: <Execom23 />,
+    element: <Execom defaultYear="2023" />
   },
   {
     path: "/execom22",
-    element: <Execom22 />,
+    element: <Execom defaultYear="2022" />
   },
   {
-    path: "/blog",
-    element: <ArticleGrid />,
+    path: "/event/reise",
+    element: <Reise />
   },
   {
-    path: "/blog/:id",
-    element: <BlogComponent />,
-  },
-  {
-    path: "/event/reise", // New route for the Excelsior page
-    element: <Reise />,
-  },
-  {
-    path : "/excelsior",
-    element : <Excelsior25 />,
+    path: "/excelsior",
+    element: <Excelsior25 />
   }
-
 ]);
 
 export default router;

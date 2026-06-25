@@ -1,68 +1,91 @@
-import "./Societies.css";
-import cs from "../../assets/images/cs.png";
-import com from "../../assets/images/com.png";
-import ias from "../../assets/images/ias.png";
-import wie from "../../assets/images/wie.png";
-import sight from "../../assets/images/sight.png";
-import Globe from "@/components/magicui/globe";
-import Heading from "../Heading";
-import SocietyCard from "../SocietyCard";
+import React from "react";
+import csLogo from "../../assets/images/cs.png";
+import comLogo from "../../assets/images/com.png";
+import iasLogo from "../../assets/images/ias.png";
+import wieLogo from "../../assets/images/wie.png";
+import sightLogo from "../../assets/images/sight.png";
+import Heading from "../Common/Heading";
+import SocietyCard from "./SocietyCard";
 
 const Societies = () => {
   const societiesData = [
-    { 
-      image: cs, 
-      name: "Computer Society", 
-      link1: "https://www.linkedin.com/company/ieee-cs-sbc-gec-palakkad/", 
-      link2: "https://www.instagram.com/ieeecsgecpkd?igsh=a3k4ZXdwenZrYXdt"
+    {
+      image: csLogo,
+      name: "Computer Society",
+      fullName: "IEEE Computer Society SBC",
+      link1: "https://www.linkedin.com/company/ieee-cs-sbc-gec-palakkad/",
+      link2: "https://www.instagram.com/ieeecsgecpkd",
+      webpage: "https://www.computer.org/"
     },
-    { 
-      image: com, 
-      name: "Communications Society", 
-      link1: "https://www.linkedin.com/company/ieee-ias-sb-chapter-gec-palakkad/", 
-      link2: "https://www.instagram.com/ieeecomsocgecpalakkad?igsh=MXh1Z3Blc3AxbWU0cw=="
+    {
+      image: comLogo,
+      name: "Communications Society",
+      fullName: "IEEE Communications Society SBC",
+      link1:
+        "https://www.linkedin.com/company/ieee-ias-sb-chapter-gec-palakkad/",
+      link2: "https://www.instagram.com/ieeecomsocgecpalakkad",
+      webpage: "https://www.comsoc.org/"
     },
-    { 
-      image: ias, 
-      name: "IAS Society", 
-      link1: "https://www.linkedin.com/company/ieee-ias-sb-chapter-gec-palakkad/", 
-      link2: "https://www.instagram.com/ieeeiasgecpkd?igsh=MXFqdDl4M3E5a25naw=="
+    {
+      image: iasLogo,
+      name: "Industry Applications Society",
+      fullName: "IEEE IAS SBC",
+      link1:
+        "https://www.linkedin.com/company/ieee-ias-sb-chapter-gec-palakkad/",
+      link2: "https://www.instagram.com/ieeeiasgecpkd",
+      webpage: "https://ias.ieee.org/"
     },
-    { 
-      image: wie, 
-      name: "WIE", 
-      link1: "https://www.linkedin.com/company/ieee-wie-sb-chapter-gec-palakkad/", 
-      link2: "https://www.instagram.com/ieeewiegecpalakkad?igsh=eWRvdGpnd3Z2N2J5"
+    {
+      image: wieLogo,
+      name: "Women in Engineering",
+      fullName: "IEEE WIE Affinity Group",
+      link1:
+        "https://www.linkedin.com/company/ieee-wie-sb-chapter-gec-palakkad/",
+      link2: "https://www.instagram.com/ieeewiegecpalakkad",
+      webpage: "https://wie.ieee.org/"
     },
-    { 
-      image: sight, 
-      name: "SIGHT", 
-      link1: "https://www.linkedin.com/company/ieee-sight-sb-chapter-gec-palakkad/", 
-      link2: "https://www.instagram.com/ieeesightgecpkd?igsh=MXRxdHY1djVqOXlhbA=="
-    },
+    {
+      image: sightLogo,
+      name: "SIGHT Affinity Group",
+      fullName: "Special Interest Group on Humanitarian Tech",
+      link1:
+        "https://www.linkedin.com/company/ieee-sight-sb-chapter-gec-palakkad/",
+      link2: "https://www.instagram.com/ieeesightgecpkd",
+      webpage: "https://sight.ieee.org/"
+    }
   ];
 
   return (
-    <>
-      <div id="society" className="societies-section relative container">
-        {/* <Globe className="absolute left-[-50%]" /> */}
-        <div className="society">
-          <Heading text="SOCIETIES" />
+    <section
+      id="society"
+      className="w-full py-20 px-6 sm:px-12 md:px-20 bg-slate-50 border-y border-slate-100"
+    >
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="flex flex-col items-center mb-12">
+          <Heading text="ORGANIZATIONAL SOCIETIES" className="mb-2" />
+          <p className="text-slate-500 text-sm md:text-base font-light text-center max-w-2xl">
+            Explore our specialized technical chapters and affinity groups
+            dedicated to fostering research, engineering knowledge, and
+            humanitarian technology.
+          </p>
         </div>
 
-        <div className="socities-list flex flex-wrap flex-row justify-center items-center">
+        {/* Uniform Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center mt-10">
           {societiesData.map((society, index) => (
-            <SocietyCard 
+            <SocietyCard
               key={index}
-              image={society.image} 
+              image={society.image}
               name={society.name}
+              fullName={society.fullName}
               link1={society.link1}
               link2={society.link2}
+              webpage={society.webpage}
             />
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
