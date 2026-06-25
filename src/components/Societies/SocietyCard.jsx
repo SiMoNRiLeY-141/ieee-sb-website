@@ -11,8 +11,9 @@ const SocietyCard = ({ image, name, fullName, link1, link2, webpage }) => {
           alt={`${name} emblem`}
           className="w-[90%] h-16 sm:h-28 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
           onError={(e) => {
+            e.target.onerror = null;
             e.target.src =
-              "https://via.placeholder.com/120?text=" + name.substring(0, 3);
+              "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%2394a3b8'>" + name.substring(0, 3) + "</text></svg>";
           }}
         />
       </div>

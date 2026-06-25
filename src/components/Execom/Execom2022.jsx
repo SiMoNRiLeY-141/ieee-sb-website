@@ -31,8 +31,9 @@ const Execom2022 = () => {
             alt={pic.title}
             className="w-full rounded-lg shadow-sm object-contain max-h-[500px] bg-white border border-slate-200/50"
             onError={(e) => {
+              e.target.onerror = null;
               e.target.src =
-                "https://via.placeholder.com/800x500?text=" + pic.title;
+                "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='20' fill='%2394a3b8'>Execom Photo</text></svg>";
             }}
           />
         </div>

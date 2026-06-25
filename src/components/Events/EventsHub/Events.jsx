@@ -191,9 +191,9 @@ const Events = () => {
               alt={`${activeEvent.name} photo`}
               className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-102"
               onError={(e) => {
+                e.target.onerror = null;
                 e.target.src =
-                  "https://via.placeholder.com/600x400?text=" +
-                  activeEvent.name;
+                  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' fill='%2394a3b8'>IEEE Event Poster</text></svg>";
               }}
             />
             {/* Visual gradient to blend image shadow */}

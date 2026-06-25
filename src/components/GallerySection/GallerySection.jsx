@@ -151,8 +151,9 @@ function GallerySection() {
                   src={img.src}
                   alt={img.alt}
                   onError={(e) => {
+                    e.target.onerror = null;
                     e.target.src =
-                      "https://via.placeholder.com/600x400?text=" + img.alt;
+                      "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%2394a3b8'>Gallery Photo</text></svg>";
                   }}
                 />
                 {/* Hover Overlay */}
@@ -217,9 +218,9 @@ function GallerySection() {
               alt={GALLERY_IMAGES[activePhotoIndex].alt}
               className="max-w-full max-h-[72vh] object-contain rounded-lg shadow-2xl"
               onError={(e) => {
+                e.target.onerror = null;
                 e.target.src =
-                  "https://via.placeholder.com/1000x700?text=" +
-                  GALLERY_IMAGES[activePhotoIndex].alt;
+                  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='700' viewBox='0 0 1000 700'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%2394a3b8'>Gallery Photo</text></svg>";
               }}
             />
             {/* Metadata Text */}

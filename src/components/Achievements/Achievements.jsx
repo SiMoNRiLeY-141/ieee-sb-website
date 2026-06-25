@@ -111,9 +111,9 @@ const Achievements = () => {
                       alt={achievement.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
+                        e.target.onerror = null;
                         e.target.src =
-                          "https://via.placeholder.com/250?text=" +
-                          achievement.name;
+                          "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 250 250'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%2394a3b8'>Achievement</text></svg>";
                       }}
                     />
                     {/* Badge */}
