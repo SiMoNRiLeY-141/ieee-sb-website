@@ -58,7 +58,7 @@ const Societies = () => {
   return (
     <section
       id="society"
-      className="w-full py-20 px-6 sm:px-12 md:px-20 bg-slate-50 border-y border-slate-100"
+      className="w-full py-16 px-4 sm:px-12 md:px-20 bg-slate-50 border-y border-slate-100"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex flex-col items-center mb-12">
@@ -70,8 +70,8 @@ const Societies = () => {
           </p>
         </div>
 
-        {/* Uniform Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center mt-10">
+        {/* Uniform Grid Layout - 2 columns on mobile */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 justify-items-center mt-10">
           {societiesData.map((society, index) => (
             <SocietyCard
               key={index}

@@ -76,7 +76,7 @@ const Achievements = () => {
   return (
     <section
       id="achievements"
-      className="w-full py-20 px-6 sm:px-12 md:px-20 bg-slate-50 border-y border-slate-100"
+      className="w-full py-16 px-4 sm:px-12 md:px-20 bg-slate-50 border-y border-slate-100"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Section Heading */}
@@ -93,17 +93,17 @@ const Achievements = () => {
         <div
           className={`expandable-container achievements-container ${isExpanded ? "expanded" : "collapsed"}`}
         >
-          {/* Grid Layout */}
+          {/* Grid Layout - 2 columns on mobile */}
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 achievements-grid ${isExpanded ? "expanded" : "collapsed"}`}
+            className={`grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-8 achievements-grid ${isExpanded ? "expanded" : "collapsed"}`}
           >
             {/* Volunteer Cards */}
             {ACHIEVEMENTS_DATA.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-sky-500/20 hover:-translate-y-1 transition-all duration-300 group"
+                className="bg-white border border-slate-200/80 rounded-2xl p-3 sm:p-6 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-sky-500/20 hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="space-y-6">
+                <div className="space-y-3 sm:space-y-6">
                   {/* Image & Ribbon Container */}
                   <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
                     <img
@@ -117,24 +117,24 @@ const Achievements = () => {
                       }}
                     />
                     {/* Badge */}
-                    <div className="absolute top-3 right-3 bg-[#0f172a] text-white p-2 rounded-full shadow-md z-10 flex items-center justify-center">
-                      <Award className="w-4 h-4 text-sky-400" />
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-[#0f172a] text-white p-1 sm:p-2 rounded-full shadow-md z-10 flex items-center justify-center">
+                      <Award className="w-3 h-3 sm:w-4 sm:h-4 text-sky-400" />
                     </div>
                   </div>
 
                   {/* Info */}
                   <div>
-                    <h3 className="text-[#0f172a] font-bold text-lg leading-tight uppercase font-monument">
+                    <h3 className="text-[#0f172a] font-bold text-[10px] sm:text-lg leading-tight uppercase font-monument">
                       {achievement.name}
                     </h3>
                   </div>
 
                   {/* Details / Pills */}
-                  <div className="flex flex-col gap-2 pt-2">
+                  <div className="flex flex-col gap-1.5 sm:gap-2 pt-1 sm:pt-2">
                     {achievement.details.map((detail, idx) => (
                       <div
                         key={idx}
-                        className="text-xs text-slate-600 bg-slate-50 border border-slate-100 rounded-lg p-2.5 leading-normal"
+                        className="text-[8px] sm:text-xs text-slate-600 bg-slate-50 border border-slate-100 rounded-lg p-1.5 sm:p-2.5 leading-normal"
                       >
                         {detail}
                       </div>

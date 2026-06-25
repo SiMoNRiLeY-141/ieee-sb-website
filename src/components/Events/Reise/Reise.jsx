@@ -110,12 +110,12 @@ function Reise() {
               EXECUTIVE SUMMARY
             </h2>
             <p className="text-blue-700 leading-relaxed text-base sm:text-lg mb-4">
-              &ldquo;REISE: Roadmap to Success&rdquo; is organized by IEEE SB GEC Palakkad
-              in association with the IEEE Malabar Subsection as part of the
-              Silver Jubilee Celebrations of GEC Palakkad. This event aims to
-              inspire and guide school students toward building a strong
-              foundation for their future through experiential learning and
-              interactive sessions.
+              &ldquo;REISE: Roadmap to Success&rdquo; is organized by IEEE SB
+              GEC Palakkad in association with the IEEE Malabar Subsection as
+              part of the Silver Jubilee Celebrations of GEC Palakkad. This
+              event aims to inspire and guide school students toward building a
+              strong foundation for their future through experiential learning
+              and interactive sessions.
             </p>
             <p className="text-blue-700 leading-relaxed text-base sm:text-lg">
               The proposed workshop will be conducted over two days — August 7

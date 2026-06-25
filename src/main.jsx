@@ -46,5 +46,3 @@ requestAnimationFrame(() => {
     tryDismiss();
   });
 });
-
-

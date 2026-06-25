@@ -121,26 +121,26 @@ const InteractiveGrid = () => {
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-[85vh] flex items-center justify-center bg-white py-20 px-6 sm:px-12 md:px-20 overflow-hidden border-b border-slate-100">
+    <section className="relative w-full pt-28 pb-16 sm:min-h-[85vh] sm:flex sm:items-center sm:justify-center bg-white px-6 sm:px-12 md:px-20 overflow-hidden border-b border-slate-100">
       <InteractiveGrid />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start gap-8">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-            Government Engineering College Palakkad
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-start gap-6 sm:gap-8">
+        <div className="flex flex-col gap-2 max-w-full">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-slate-100 text-slate-800 text-[10px] sm:text-xs font-semibold uppercase tracking-wider max-w-full leading-normal">
+            <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shrink-0"></span>
+            <span>Government Engineering College Palakkad</span>
           </div>
         </div>
 
-        <h1 className="text-[#0f172a] font-monument font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight max-w-6xl">
+        <h1 className="text-[#0f172a] font-monument font-bold text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.15] sm:leading-[1.1] tracking-tight max-w-6xl">
           IEEE SB GEC PALAKKAD
         </h1>
 
-        <p className="text-xl sm:text-2xl font-light text-[#0f172a] border-l-2 border-sky-500 pl-4 py-1 italic max-w-4xl">
+        <p className="text-lg sm:text-2xl font-light text-[#0f172a] border-l-2 border-sky-500 pl-4 py-1 italic max-w-4xl">
           Nourishing Technical Minds, Providing a Technical Home.
         </p>
 
-        <p className="text-base sm:text-lg md:text-xl text-[#334155] font-light leading-relaxed max-w-4xl mt-4">
+        <p className="text-sm sm:text-lg md:text-xl text-[#334155] font-light leading-relaxed max-w-4xl mt-2 sm:mt-4">
           The IEEE Student Branch of Government Engineering College Palakkad,
           Kerala continuously works to enhance the proficiency of each and every
           student in the institution as well as the locality in becoming more
@@ -150,12 +150,12 @@ const Hero = () => {
           home.
         </p>
 
-        <div className="flex flex-wrap gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 mt-4 sm:mt-6">
           <a
             href="https://www.ieee.org"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-[#0f172a] hover:bg-sky-600 text-white font-semibold rounded-md shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto text-center px-8 py-3 bg-[#0f172a] hover:bg-sky-600 text-white font-semibold rounded-md shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base"
           >
             Join IEEE
           </a>
@@ -175,7 +175,7 @@ const Hero = () => {
                 });
               }
             }}
-            className="px-8 py-3 bg-white hover:bg-slate-50 text-[#0f172a] font-semibold rounded-md border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto text-center px-8 py-3 bg-white hover:bg-slate-50 text-[#0f172a] font-semibold rounded-md border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base"
           >
             Explore Societies
           </a>

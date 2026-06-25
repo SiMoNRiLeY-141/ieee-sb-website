@@ -7,7 +7,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 export default [
   // Ignore compiled/generated output
   {
-    ignores: ["dist/**", "node_modules/**", "public/**"],
+    ignores: ["dist/**", "node_modules/**", "public/**"]
   },
 
   // Base JS rules
@@ -16,19 +16,15 @@ export default [
   // Node.js config files at the project root
   // (vite.config.js, tailwind.config.js, postcss.config.js, eslint.config.js)
   {
-    files: [
-      "*.config.js",
-      "*.config.mjs",
-      "*.config.cjs",
-    ],
+    files: ["*.config.js", "*.config.mjs", "*.config.cjs"],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: "module",
       globals: {
         ...globals.node,
-        ...globals.es2021,
-      },
-    },
+        ...globals.es2021
+      }
+    }
   },
 
   // React source files
@@ -39,19 +35,19 @@ export default [
       sourceType: "module",
       globals: {
         ...globals.browser,
-        ...globals.es2021,
+        ...globals.es2021
       },
       parserOptions: {
-        ecmaFeatures: { jsx: true },
-      },
+        ecmaFeatures: { jsx: true }
+      }
     },
     plugins: {
       react: reactPlugin,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
+      "react-refresh": reactRefresh
     },
     settings: {
-      react: { version: "detect" },
+      react: { version: "detect" }
     },
     rules: {
       // React recommended rules
@@ -63,7 +59,7 @@ export default [
       // Vite HMR: warn if components are not safely exportable
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true },
+        { allowConstantExport: true }
       ],
 
       // React 17+ JSX transform — no need to import React
@@ -71,8 +67,11 @@ export default [
       "react/prop-types": "off",
 
       // General quality rules
-      "no-unused-vars": ["warn", { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }],
-      "no-console": "warn",
-    },
-  },
+      "no-unused-vars": [
+        "warn",
+        { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }
+      ],
+      "no-console": "warn"
+    }
+  }
 ];

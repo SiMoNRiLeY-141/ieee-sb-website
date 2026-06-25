@@ -111,10 +111,10 @@ const Events = () => {
           </p>
         </div>
 
-        {/* Carousel Container with Uniform Height Across Breakpoints */}
-        <div className="relative border border-slate-200/80 rounded-2xl overflow-hidden bg-slate-50 shadow-sm h-[760px] sm:h-[740px] lg:h-[580px] flex flex-col lg:flex-row">
+        {/* Carousel Container with Dynamic Height on Mobile, Fixed on Desktop */}
+        <div className="relative border border-slate-200/80 rounded-2xl overflow-hidden bg-slate-50 shadow-sm min-h-[760px] sm:min-h-[740px] lg:h-[580px] flex flex-col lg:flex-row">
           {/* Left Split: Event Details */}
-          <div className="w-full lg:max-w-[55%] h-[500px] sm:h-[460px] lg:h-full p-6 sm:p-8 lg:p-12 flex flex-col justify-between z-10 bg-white">
+          <div className="w-full lg:max-w-[55%] h-auto lg:h-full p-6 sm:p-8 lg:p-12 flex flex-col justify-between z-10 bg-white">
             <div className="space-y-4 sm:space-y-6">
               {/* Category tag */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-xs font-semibold uppercase tracking-wider">
@@ -154,7 +154,7 @@ const Events = () => {
             </div>
 
             {/* Navigation and Slide Indicator */}
-            <div className="flex items-center justify-between mt-auto pt-4 sm:pt-6 border-t border-slate-100">
+            <div className="flex items-center justify-between mt-8 lg:mt-auto pt-4 sm:pt-6 border-t border-slate-100">
               {/* Controls */}
               <div className="flex items-center gap-3">
                 <button
@@ -185,7 +185,7 @@ const Events = () => {
           </div>
 
           {/* Right Split: Event Image Frame with Full Visibility Containment */}
-          <div className="w-full lg:w-[45%] h-[260px] sm:h-[280px] lg:h-full relative overflow-hidden bg-slate-100 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200/80 p-6 sm:p-8">
+          <div className="w-full lg:w-[45%] h-[260px] sm:h-[280px] lg:h-full shrink-0 relative overflow-hidden bg-slate-100 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200/80 p-6 sm:p-8">
             <img
               src={activeEvent.img}
               alt={`${activeEvent.name} photo`}

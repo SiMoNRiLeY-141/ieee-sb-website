@@ -49,7 +49,7 @@ const ExecomPage = ({ defaultYear = "2026" }) => {
           </div>
 
           {/* Year Tabs */}
-          <div className="flex items-center justify-center flex-wrap gap-2 md:gap-4 p-1.5 bg-slate-50 border border-slate-200/80 rounded-full mb-16 max-w-lg w-full">
+          <div className="flex items-center justify-center flex-wrap gap-2 md:gap-4 p-1.5 bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-full mb-16 max-w-lg w-full">
             {years.map((year) => (
               <button
                 key={year}
