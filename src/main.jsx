@@ -7,6 +7,9 @@ import "./App.css";
 
 // Patch absolute image paths for GitHub Pages subpath deployment
 if (import.meta.env.BASE_URL !== "/") {
+  const base = import.meta.env.BASE_URL;
+
+  // 1. Patch property setter
   const originalSrcDescriptor = Object.getOwnPropertyDescriptor(
     HTMLImageElement.prototype,
     "src"
@@ -17,18 +20,38 @@ if (import.meta.env.BASE_URL !== "/") {
       ...originalSrcDescriptor,
       set: function (value) {
         if (typeof value === "string") {
-          const originWithImages = window.location.origin + "/images/";
-          if (value.startsWith(originWithImages)) {
-            value = value.replace(
-              originWithImages,
-              window.location.origin + import.meta.env.BASE_URL + "images/"
-            );
+          if (value.startsWith("/images/")) {
+            value = base + value.substring(1);
+          } else {
+            const originWithImages = window.location.origin + "/images/";
+            if (value.startsWith(originWithImages)) {
+              value =
+                window.location.origin +
+                base +
+                "images/" +
+                value.substring(originWithImages.length);
+            }
           }
         }
         originalSrcDescriptor.set.call(this, value);
       }
     });
   }
+
+  // 2. Patch setAttribute
+  const originalSetAttribute = Element.prototype.setAttribute;
+  Element.prototype.setAttribute = function (name, value) {
+    if (
+      name === "src" &&
+      this instanceof HTMLImageElement &&
+      typeof value === "string"
+    ) {
+      if (value.startsWith("/images/")) {
+        value = base + value.substring(1);
+      }
+    }
+    return originalSetAttribute.call(this, name, value);
+  };
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
