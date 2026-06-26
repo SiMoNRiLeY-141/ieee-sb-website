@@ -5,6 +5,32 @@ import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import "./App.css";
 
+// Patch absolute image paths for GitHub Pages subpath deployment
+if (import.meta.env.BASE_URL !== "/") {
+  const originalSrcDescriptor = Object.getOwnPropertyDescriptor(
+    HTMLImageElement.prototype,
+    "src"
+  );
+
+  if (originalSrcDescriptor && originalSrcDescriptor.set) {
+    Object.defineProperty(HTMLImageElement.prototype, "src", {
+      ...originalSrcDescriptor,
+      set: function (value) {
+        if (typeof value === "string") {
+          const originWithImages = window.location.origin + "/images/";
+          if (value.startsWith(originWithImages)) {
+            value = value.replace(
+              originWithImages,
+              window.location.origin + import.meta.env.BASE_URL + "images/"
+            );
+          }
+        }
+        originalSrcDescriptor.set.call(this, value);
+      }
+    });
+  }
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
